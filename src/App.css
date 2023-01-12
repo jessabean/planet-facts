@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+:root {
+  --color-white: #ffffff;
+  --color-gray-10: #070724;
+  --color-gray-30: #38384F;
+  --color-gray-50: #838391;
+  --color-teal-50: #419EBB;
+  --color-yellow-50: #EDA249;
+  --color-purple-50: #6F2ED6;
+  --color-green-50: #1EC2A4;
+  --color-orange-60: #D14C32;
+  --color-orange-70: #CD5120;
+  --color-red-50: #D83A34;
+  --color-blue-50: #2D68F0;
+  --font-display: 'Antonio', sans-serif;
+  --font-body: 'Spartan', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  /* background-color: var(--color-gray-10); */
+  background: var(--color-gray-10) url('./assets/images/background-stars.svg');
+  color: var(--color-white);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-logo {
+  width: 108px;
+  height: 26px;
 }
