@@ -44,11 +44,11 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('https://planet-data.vercel.app/planets.json')
+    fetch('https://run.mocky.io/v3/9d5a78ef-ee77-4d25-93a1-7a04d0788f27')
       .then(async response => {
         const data = await response.json();
         if (response.ok) {
-          setPlanets(data.planets);
+          setPlanets(data);
         }
       })
       .catch(error => console.log(error))
