@@ -17,13 +17,13 @@ function PlanetPage({data} : Props) {
   
   return (
     <div className="planet">
-      <div className="planet-nav" role="tablist">
-        <button onClick={() => setSelectedTab('overview')}>Overview</button>
-        <button onClick={() => setSelectedTab('structure')}>Structure</button>
-        <button onClick={() => setSelectedTab('geology')}>Surface</button>
+      <div className="tab-list" role="tablist">
+        <button className="tab-button" onClick={() => setSelectedTab('overview')}>Overview</button>
+        <button className="tab-button" onClick={() => setSelectedTab('structure')}>Structure</button>
+        <button className="tab-button" onClick={() => setSelectedTab('geology')}>Surface</button>
       </div>
       <figure className="planet-image">
-
+        <img src={`https://raw.githubusercontent.com/jessabean/planet-facts-images/main/${selectedFact.image}`} />
       </figure>
       <div className="planet-facts">
         <h2 className="planet-name">{data.name}</h2>
