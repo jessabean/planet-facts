@@ -3,8 +3,10 @@ import './App.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { useEffect, useState } from 'react';
 import Nav from './components/Nav/Nav';
+import PlanetPage from './components/PlanetPage/PlanetPage';
+import { Planet } from './types/planet.type'
 
-const initialPlanet = {
+const initialPlanet: Planet = {
   "name": "Mercury",
   "overview": {
     "content": "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.",
@@ -30,8 +32,8 @@ const initialPlanet = {
 };
 
 function App() {
-  const [planets, setPlanets] = useState([]);
-  const [currentPlanet, setCurrentPlanet] = useState(initialPlanet)
+  const [planets, setPlanets] = useState<Planet[] | []>([]);
+  const [currentPlanet, setCurrentPlanet] = useState<Planet>(initialPlanet)
 
   function getPlanetNames(): string[] {
     if (planets.length) {
@@ -64,6 +66,9 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
           <Nav activeTab={currentPlanet.name} planets={getPlanetNames()}></Nav>
         </header>
+        <main className='main-content'>
+          <PlanetPage data={currentPlanet}></PlanetPage>
+        </main>
       </div>
     </HelmetProvider>
   );
