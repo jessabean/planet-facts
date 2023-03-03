@@ -3,6 +3,7 @@
   --color-gray-10: #070724;
   --color-gray-30: #38384F;
   --color-gray-50: #838391;
+  --color-gray-80: #C1C1C8;
   --color-teal-50: #419EBB;
   --color-yellow-50: #EDA249;
   --color-purple-50: #6F2ED6;
@@ -11,22 +12,77 @@
   --color-orange-70: #CD5120;
   --color-red-50: #D83A34;
   --color-blue-50: #2D68F0;
+
   --font-display: 'Antonio', sans-serif;
   --font-body: 'Spartan', sans-serif;
+
+  --font-step--2: 0.5em;
+  --font-step--1: 0.75em;
+  --font-step-0: 1em;
+  --font-step-1: 1.15em;
+  --font-step-2: 1.5em;
+  --font-step-3: 1.7em;
+  --font-step-4: 2.5em;
+  --font-step-5: 3em;
+  --font-step-6: 5em;
+
+  --space-xs: 0.25em;
+  --space-sm: 0.5em;
+  --space-md: 1em;
+  --space-lg: 1.5em;
+  --space-xl: 2em;
+  --space-2xl: 2.5em;
+}
+
+@font-face {
+  font-family: Spartan;
+  src: url('assets/fonts/LeagueSpartan-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: Spartan;
+  src: url('assets/fonts/LeagueSpartan-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Antonio;
+  src: url('assets/fonts/Antonio-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
-  /* background-color: var(--color-gray-10); */
   background: var(--color-gray-10) url('./assets/images/background-stars.svg');
   color: var(--color-white);
+  font-size: var(--font-step-1, 1em);
+  font-family: var(--font-body);
+  line-height: 1.4;
 }
 
 .App-header {
-  padding: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
 }
 
 .App-logo {
   width: 108px;
   height: 26px;
+}
+
+main {
+  max-width: 80em;
+  margin: 0 auto;
+}
+
+.text--display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
 }

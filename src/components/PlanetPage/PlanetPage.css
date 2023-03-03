@@ -1,0 +1,7 @@
+.planet-name {
+  font-size: var(--font-step-6);
+}
+
+.planet-data dd {
+  font-size: var(--font-step-4);
+}

@@ -26,19 +26,19 @@ function PlanetPage({data} : Props) {
         <img src={`https://raw.githubusercontent.com/jessabean/planet-facts-images/main/${selectedFact.image}`} />
       </figure>
       <div className="planet-facts">
-        <h2 className="planet-name">{data.name}</h2>
+        <h2 className="planet-name text--display">{data.name}</h2>
         <p>{selectedFact.content}</p>
         <p>{selectedFact.source}</p>
       </div>
       <dl className="planet-data">
         <dt>Rotation Time</dt>
-        <dd>{data.rotation}</dd>
+        <dd className="text--display">{data.rotation}</dd>
         <dt>Revolution Time</dt>
-        <dd>{data.revolution}</dd>
+        <dd className="text--display">{data.revolution}</dd>
         <dt>Radius</dt>
-        <dd>{data.radius}</dd>
+        <dd className="text--display">{data.radius}</dd>
         <dt>Average Temp.</dt>
-        <dd>{data.temperature}</dd>
+        <dd className="text--display">{data.temperature}</dd>
       </dl>
     </div>
   )

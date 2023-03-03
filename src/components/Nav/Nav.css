@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-main {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-main li + li {
+  margin-left: var(--space-2xl);
+}
+
+.nav-main a,
+.nav-main a:visited {
+  color: var(--color-gray-80);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-main a:hover {
+  color: var(--color-white);
+}

@@ -56,9 +56,7 @@ function App() {
     <HelmetProvider>
       <div className="App">
         <Helmet>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+          <link rel="preload" href="assets/fonts/LeagueSpartan-Regular.woff2" as="font" type="font/woff2" />
         </Helmet>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
