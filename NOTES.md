@@ -8,7 +8,7 @@
 - ✅ Nav
   - ✅ logo
   - planet names link to planet pages
-  - hamburger menu on small screens
+  - ✅ hamburger menu on small screens
 - ✅ Planet Page
   - ✅ render planet name
   - ✅ render tabs for overview, structure, geology
@@ -17,6 +17,7 @@
   - ✅ render planet data
   - ✅ reponsive grid
   - ✅ functioning tabs for overview, structure, geology
+  - set active tab state on click
 
 ## Architecture notes
 

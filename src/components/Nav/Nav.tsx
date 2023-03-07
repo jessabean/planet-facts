@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Nav.css'
+import styles from './Nav.module.css'
 
 interface Props {
   activeTab: string,
@@ -7,13 +7,12 @@ interface Props {
 }
 
 function Nav({ activeTab, planets }: Props) {
-
   return (
-    <nav className="nav">
-      <ul className="nav-main">
+    <nav className={styles["nav"]}>
+      <ul className={styles["nav-main"]}>
         {
           planets.map(planet => <li key={planet} className={activeTab === planet ? 'active' : ''}>{planet}</li>)
-        }                                                         
+        }                                                    
       </ul>
     </nav>
   )

@@ -2,7 +2,9 @@ import logo from './assets/images/logo.svg';
 import './App.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from '@react-hook/media-query'
 import Nav from './components/Nav/Nav';
+import HamburgerNav from './components/HamburgerNav/HamburgerNav';
 import PlanetPage from './components/PlanetPage/PlanetPage';
 import { Planet } from './types/planet.type'
 
@@ -41,6 +43,8 @@ function App() {
     }
   }
 
+  const matchesSmallScreen = useMediaQuery('(max-width: 767px)');
+
   useEffect(() => {
     fetch('https://run.mocky.io/v3/cf170e49-4822-4bcc-a741-2048d4a6377f')
       .then(async response => {
@@ -59,8 +63,12 @@ function App() {
           <link rel="preload" href="assets/fonts/LeagueSpartan-Regular.woff2" as="font" type="font/woff2" />
         </Helmet>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Nav activeTab={currentPlanet.name} planets={getPlanetNames()}></Nav>
+          <img src={logo} className="App-logo" alt="logo" />      
+          {
+            matchesSmallScreen
+            ? <HamburgerNav activeTab={currentPlanet.name} planets={getPlanetNames()}></HamburgerNav>
+            : <Nav activeTab={currentPlanet.name} planets={getPlanetNames()}></Nav>
+          }  
         </header>
         <main className='main-content'>
           <PlanetPage data={currentPlanet}></PlanetPage>
