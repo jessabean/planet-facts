@@ -1,21 +1,54 @@
-.planet-facts {
-  font-size: var(--font-step--1);
-  line-height: 1.75;
-  text-align: center;
-  margin-bottom: var(--space-xl);
+@media (min-width: 48em) {
+  .planet {
+    display: grid;
+    grid-gap: 3em;
+    grid-template-columns: 5fr 3fr;
+    grid-template-areas: 
+      "figure figure"
+      "content tabs"
+      "stats stats";
+    padding: var(--space-xl)
+  }
 }
 
+@media (min-width: 60em) {
+  .planet {
+    grid-gap: var(--space-lg);
+    grid-template-areas: 
+      "figure content"
+      "figure tabs"
+      "stats stats";
+    max-width: 70em;
+  }
+}
+
+/*
+Content area
+=============== */
 .planet-image {
+  align-items: center;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 20em;
+  justify-content: center;
+  margin: 0;
+}
+
+.planet-facts {
+  color: var(--color-gray-80);
+  font-size: var(--font-step-0);
+  line-height: 1.75;
+  margin-bottom: var(--space-xl);
+  padding: 0 var(--space-lg);
+  text-align: center;
 }
 
 .planet-name {
+  color: var(--color-white);
   font-size: var(--font-step-4);
+  font-weight: 400;
   line-height: 1;
   margin-top: 0;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .planet-fact-source,
@@ -37,13 +70,141 @@
 }
 
 .planet-fact-source > svg {
-  vertical-align: middle;
-  margin-top: -0.1em;
   margin-left: 0.25em;
+  margin-top: -0.1em;
+  vertical-align: middle;
 }
 
+@media (min-width: 48em) {
+  .planet-facts {
+    grid-area: content;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .planet-image {
+    grid-area: figure;
+  }
+
+  .planet-name {
+    font-size: var(--font-step-5);
+    margin-bottom: var(--space-sm);
+  }
+
+  .planet-fact-source {
+    margin-top: var(--space-lg);
+  }
+}
+
+@media (min-width: 60em) {
+  .planet-name {
+    font-size: var(--font-step-6);
+  }
+
+  .planet-image {
+    height: 100%;
+  }
+
+  .planet-facts {
+    font-size: var(--font-step-1);
+    padding-top: 8em;
+  }
+
+  .planet-facts {
+    max-width: 22em;
+  }
+
+  .planet-fact-source {
+    font-size: var(--font-step--1);
+  }
+}
+
+/*
+  Tabs
+=============== */
+.tab-list {
+  display: flex;
+  border-bottom: 1px solid var(--color-gray-30);
+  padding: 0 var(--space-lg);
+  justify-content: space-around;
+}
+
+.tab-list > button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  box-shadow: none;
+  color: var(--color-white);
+  font-size: var(--font-step--2);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-lg) var(--space-sm) var(--space-md);
+  display: block;
+  text-align: center;
+}
+
+.tab-list > button:hover,
+.tab-list > button:active {
+  border-color: var(--color-blue);
+  cursor: pointer;
+}
+
+.tab-number {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .tab-list {
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: none;
+    grid-area: tabs;
+    max-width: 17em;
+    padding: 0;
+  }
+
+  .tab-list > button {
+    display: block;
+    border: 1px solid var(--color-gray-50);
+    padding: var(--space-md) var(--space-xl);
+    text-align: left;
+    width: 100%;
+  }
+  .tab-list > button:hover,
+  .tab-list > button:active {
+    background-color: var(--color-gray-30);
+    border-color: var(--color-gray-30);
+  }
+
+  .tab-list > button + button {
+    margin-block-start: var(--space-lg);
+  }
+
+  .tab-number {
+    display: inline-block;
+    color: var(--color-gray-80);
+    margin-right: var(--space-lg);
+  }
+}
+
+@media (min-width: 60em) {
+  .tab-list {
+    max-width: 22em;
+  }
+
+  .tab-list > button + button {
+    margin-block-start: var(--space-md);
+  }
+}
+
+/*
+  Statistics
+=============== */
 .planet-statistics {
   margin: 0;
+  padding: 0 var(--space-lg)
 }
 
 .planet-statistics dt {
@@ -70,59 +231,11 @@
   padding: var(--space-sm) var(--space-lg);
 }
 
-.tab-number {
-  display: none;
-}
-
-
 @media (min-width: 48em) {
-  .planet {
-    display: grid;
-    grid-gap: 3em;
-    grid-template-columns: 5fr 3fr;
-    grid-template-areas: 
-      "figure figure"
-      "content tabs"
-      "stats stats";
-  }
-
-  .planet-facts {
-    grid-area: content;
-    margin-bottom: 0;
-    text-align: left;
-  }
-
-  .planet-image {
-    grid-area: figure;
-  }
-
-  .planet-name {
-    font-size: var(--font-step-5);
-    margin-bottom: var(--space-sm);
-  }
-
-  .planet-fact-source {
-    margin-top: var(--space-lg);
-  }
-
-  .tab-list {
-    grid-area: tabs;
-    max-width: 17em;
-  }
-
-  .tab-list > button + button {
-    margin-block-start: var(--space-lg);
-  }
-
-  .tab-number {
-    display: inline-block;
-    color: var(--color-gray-80);
-    margin-right: var(--space-lg);
-  }
-
   .planet-statistics {
     grid-area: stats;
     display: flex;
+    padding: 0;
   }
 
   .planet-statistics > * + * {
@@ -151,17 +264,8 @@
 }
 
 @media (min-width: 60em) {
-  .planet {
-    grid-gap: var(--space-lg);
-    grid-template-areas: 
-      "figure content"
-      "figure tabs"
-      "stats stats";
-    max-width: 70em;
-  }
-
-  .planet-fact-source {
-    font-size: var(--font-step--1);
+  .planet-statistics {
+    padding-top: 4.5em;
   }
 
   .planet-statistic +
@@ -169,11 +273,112 @@
     margin-left: var(--space-lg);
   }
 
-  .tab-list > button + button {
-    margin-block-start: var(--space-md);
-  }
-
   .planet-statistics dd {
     font-size: var(--font-step-3);
   }
+}
+
+
+/*
+  Planet images
+=============== */
+.planet-image--mercury img:first-child {
+  width: 6.9em;
+}
+
+.planet-image--venus img:first-child {
+  width: 9.625em;
+}
+
+.planet-image--earth img:first-child {
+  width: 10.875em;
+}
+
+.planet-image--mars img:first-child {
+  width: 8.125em;
+}
+
+.planet-image--jupiter img:first-child {
+  width: 14em;
+}
+
+.planet-image--saturn img:first-child {
+  width: 16em;
+}
+
+.planet-image--uranus img:first-child {
+  width: 11em;
+}
+
+.planet-image--neptune img:first-child {
+  width: 10.875em;
+}
+
+@media (min-width: 48em) {
+  .planet-image--mercury img:first-child {
+    width: 11.5em;
+  }
+
+  .planet-image--venus img:first-child {
+    width: 15.875em;
+  }
+
+  .planet-image--earth img:first-child {
+    width: 17.8125em;
+  }
+
+  .planet-image--mars img:first-child {
+    width: 13.375em;
+  }
+
+  .planet-image--jupiter img:first-child {
+    width: 23.125em;
+  }
+
+  .planet-image--saturn img:first-child {
+    width: 26.375em;
+  }
+
+  .planet-image--uranus img:first-child {
+    width: 18.125em;
+  }
+
+  .planet-image--neptune img:first-child {
+    width: 17.8125em;
+  }
+}
+
+@media (min-width: 60em) {
+  .planet-image--mercury img:first-child {
+    width: 18em;
+  }
+
+  .planet-image--venus img:first-child {
+    width: 25em;
+  }
+
+  .planet-image--earth img:first-child {
+    width: 28.125em;
+  }
+
+  .planet-image--mars img:first-child {
+    width: 21em;
+  }
+
+  .planet-image--jupiter img:first-child {
+    width: 36.375em;
+  }
+
+  .planet-image--saturn img:first-child {
+    width: 38.375em;
+  }
+
+  .planet-image--uranus img:first-child {
+    width: 28.625em;
+  }
+
+  .planet-image--neptune img:first-child {
+    width: 28.125em;
+  }
+  
 }

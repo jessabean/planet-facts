@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Planet } from '../../types/planet.type'
 import './PlanetPage.css';
-import {ReactComponent as SourceIcon} from '../../assets/images/icon-source.svg';
+import { ReactComponent as SourceIcon } from '../../assets/images/icon-source.svg';
 
 interface Props {
   data: Planet
@@ -25,7 +25,7 @@ function PlanetPage({data} : Props) {
         <button className="tab-button" onClick={() => setSelectedTab('geology')}><span className="tab-number">03</span> Surface</button>
       </div>
       <figure className={`planet-image planet-image--${planetName}`}>
-        <img src={`https://raw.githubusercontent.com/jessabean/planet-facts-images/main/${selectedFact.image}`} />
+        <img src={`https://raw.githubusercontent.com/jessabean/planet-facts-images/main/${selectedFact.image}`} alt={`Illustration of ${data.name}: ${selectedTab}`} />
       </figure>
       <div className="planet-facts">
         <h2 className="planet-name text--display">{data.name}</h2>
