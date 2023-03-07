@@ -16,15 +16,16 @@
   --font-display: 'Antonio', sans-serif;
   --font-body: 'Spartan', sans-serif;
 
-  --font-step--2: 0.5em;
-  --font-step--1: 0.75em;
-  --font-step-0: 1em;
-  --font-step-1: 1.15em;
-  --font-step-2: 1.5em;
-  --font-step-3: 1.7em;
-  --font-step-4: 2.5em;
-  --font-step-5: 3em;
-  --font-step-6: 5em;
+  --font-step--3: 0.6rem;
+  --font-step--2: 0.75rem;
+  --font-step--1: 0.875rem;
+  --font-step-0: 1rem;
+  --font-step-1: 1.15rem;
+  --font-step-2: 1.5rem;
+  --font-step-3: 1.7rem;
+  --font-step-4: 2.5rem;
+  --font-step-5: 3rem;
+  --font-step-6: 5rem;
 
   --space-xs: 0.25em;
   --space-sm: 0.5em;
@@ -54,15 +55,23 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 100%;
 }
 
 body {
   background: var(--color-gray-10) url('./assets/images/background-stars.svg');
   color: var(--color-white);
-  font-size: var(--font-step-1, 1em);
+  font-size: var(--font-step-0, 1em);
   font-family: var(--font-body);
   line-height: 1.4;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-block-start: var(--space-md);
 }
 
 .App-header {
@@ -80,9 +89,37 @@ body {
 main {
   max-width: 80em;
   margin: 0 auto;
+  padding: 0 var(--space-lg)
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid var(--color-gray-50);
+  box-shadow: none;
+  color: var(--color-white);
+  font-size: var(--font-step--2);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-md) var(--space-xl);
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+button:hover {
+  background-color: var(--color-gray-30);
+  border-color: var(--color-gray-30);
+  cursor: pointer;
 }
 
 .text--display {
   font-family: var(--font-display);
   text-transform: uppercase;
+}
+
+@media (min-width: 48em) {
+  main {
+    padding: 0 var(--space-xl)
+  }
 }

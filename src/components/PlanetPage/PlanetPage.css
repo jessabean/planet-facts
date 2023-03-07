@@ -1,7 +1,179 @@
-.planet-name {
-  font-size: var(--font-step-6);
+.planet-facts {
+  font-size: var(--font-step--1);
+  line-height: 1.75;
+  text-align: center;
+  margin-bottom: var(--space-xl);
 }
 
-.planet-data dd {
+.planet-image {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planet-name {
   font-size: var(--font-step-4);
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+}
+
+.planet-fact-source,
+.planet-fact-source > a {
+  color: var(--color-gray-80);
+}
+
+.planet-fact-source {
+  font-size: 1.1em;
+  margin-top: var(--space-2xl);
+}
+
+.planet-fact-source > a {
+  font-weight: bold;
+}
+
+.planet-fact-source > a:hover {
+  text-decoration: none;
+}
+
+.planet-fact-source > svg {
+  vertical-align: middle;
+  margin-top: -0.1em;
+  margin-left: 0.25em;
+}
+
+.planet-statistics {
+  margin: 0;
+}
+
+.planet-statistics dt {
+  color: var(--color-gray-80);
+  font-size: var(--font-step--2);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.planet-statistics dd {
+  font-size: var(--font-step-2);
+}
+
+.planet-statistics > * + * {
+  margin-top: var(--space-sm);
+}
+
+.planet-statistic {
+  border: 1px solid var(--color-gray-50);
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.tab-number {
+  display: none;
+}
+
+
+@media (min-width: 48em) {
+  .planet {
+    display: grid;
+    grid-gap: 3em;
+    grid-template-columns: 5fr 3fr;
+    grid-template-areas: 
+      "figure figure"
+      "content tabs"
+      "stats stats";
+  }
+
+  .planet-facts {
+    grid-area: content;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .planet-image {
+    grid-area: figure;
+  }
+
+  .planet-name {
+    font-size: var(--font-step-5);
+    margin-bottom: var(--space-sm);
+  }
+
+  .planet-fact-source {
+    margin-top: var(--space-lg);
+  }
+
+  .tab-list {
+    grid-area: tabs;
+    max-width: 17em;
+  }
+
+  .tab-list > button + button {
+    margin-block-start: var(--space-lg);
+  }
+
+  .tab-number {
+    display: inline-block;
+    color: var(--color-gray-80);
+    margin-right: var(--space-lg);
+  }
+
+  .planet-statistics {
+    grid-area: stats;
+    display: flex;
+  }
+
+  .planet-statistics > * + * {
+    margin-top: 0;
+  }
+
+  .planet-statistics dt {
+    font-size: var(--font-step--3);
+    margin: 0 0 1em;
+  }  
+  
+  .planet-statistics dd {
+    font-size: var(--font-step-2);
+    margin: 0;
+  }
+
+  .planet-statistic {
+    display: block;
+    flex: 1;
+  }
+
+  .planet-statistic +
+  .planet-statistic {
+    margin-left: var(--space-sm);
+  }
+}
+
+@media (min-width: 60em) {
+  .planet {
+    grid-gap: var(--space-lg);
+    grid-template-areas: 
+      "figure content"
+      "figure tabs"
+      "stats stats";
+    max-width: 70em;
+  }
+
+  .planet-fact-source {
+    font-size: var(--font-step--1);
+  }
+
+  .planet-statistic +
+  .planet-statistic {
+    margin-left: var(--space-lg);
+  }
+
+  .tab-list > button + button {
+    margin-block-start: var(--space-md);
+  }
+
+  .planet-statistics dd {
+    font-size: var(--font-step-3);
+  }
 }
