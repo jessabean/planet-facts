@@ -26,6 +26,8 @@
   - Selected planet (nav/routing)
   - Selected fact (tab on planet page)
   - Cached data (for performance)
+- Performance optimizations
+  - preload LCP images
 
 ## Design notes
 

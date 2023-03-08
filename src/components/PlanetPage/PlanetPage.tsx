@@ -20,9 +20,9 @@ function PlanetPage({data} : Props) {
   return (
     <div className="planet">
       <div className="tab-list" role="tablist">
-        <button className="tab-button" onClick={() => setSelectedTab('overview')}><span className="tab-number">01</span> Overview</button>
-        <button className="tab-button" onClick={() => setSelectedTab('structure')}><span className="tab-number">02</span> Structure</button>
-        <button className="tab-button" onClick={() => setSelectedTab('geology')}><span className="tab-number">03</span> Surface</button>
+        <button className="tab-button" onClick={() => setSelectedTab('overview')} role="tab"><span className="tab-number">01</span> Overview</button>
+        <button className="tab-button" onClick={() => setSelectedTab('structure')} role="tab"><span className="tab-number">02</span> Structure</button>
+        <button className="tab-button" onClick={() => setSelectedTab('geology')} role="tab"><span className="tab-number">03</span> Surface</button>
       </div>
       <figure className={`planet-image planet-image--${planetName}`}>
         <img src={`https://raw.githubusercontent.com/jessabean/planet-facts-images/main/${selectedFact.image}`} alt={`Illustration of ${data.name}: ${selectedTab}`} />
