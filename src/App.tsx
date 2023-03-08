@@ -44,7 +44,7 @@ function App() {
   const matchesSmallScreen = useMediaQuery('(max-width: 767px)');
 
   useEffect(() => {
-    fetch('https://run.mocky.io/v3/cf170e49-4822-4bcc-a741-2048d4a6377f')
+    fetch('https://run.mocky.io/v3/0846332a-bb3f-429e-9946-f062ad2338f0')
       .then(async response => {
         const data = await response.json();
         if (response.ok) {

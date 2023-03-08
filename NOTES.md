@@ -85,5 +85,7 @@
 
 - As I worked through styling the page, I noticed that the image for the "Geology" section is actually TWO SVG files layered on top of each other. For Geology, the images for overview and geology are both displayed at the same time. Had to rethink dynamically displaying images based on selected tab.
 
+  - Since the image logic is getting rather complex, it seems prudent to just export all images as flattened PNGs for now!
+
 - How to render components based on media query?
   - [`@react-hook/media-query`](https://github.com/jaredLunde/react-hook/tree/master/packages/media-query)
