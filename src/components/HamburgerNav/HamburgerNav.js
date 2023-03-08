@@ -2,12 +2,8 @@ import { useState } from "react";
 import styles from './HamburgerNav.module.css'
 import { ReactComponent as MenuIcon } from '../../assets/images/icon-hamburger.svg';
 
-interface Props {
-  activeTab?: string,
-  planets: Array<string>
-}
 
-function HamburgerNav({ activeTab, planets }: Props) {
+function HamburgerNav({ activeTab, planets }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuStyles = menuOpen

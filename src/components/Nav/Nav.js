@@ -1,13 +1,7 @@
-import { useState } from "react";
 import {Link} from "react-router-dom";
 import styles from './Nav.module.css'
 
-interface Props {
-  activeTab?: string,
-  planets: Array<string>
-}
-
-function Nav({ activeTab, planets }: Props) {
+function Nav({ activeTab, planets }) {
   return (
     <nav className={styles["nav"]}>
       <ul className={styles["nav-main"]}>

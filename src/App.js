@@ -4,7 +4,6 @@ import './App.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { Fragment, useEffect, useState } from 'react';
 import { useMediaQuery } from '@react-hook/media-query'
-import { Planet } from './types/planet.type'
 
 import Nav from './components/Nav/Nav';
 import HamburgerNav from './components/HamburgerNav/HamburgerNav';
@@ -14,12 +13,12 @@ function App() {
   const location = useLocation();
   const matchesSmallScreen = useMediaQuery('(max-width: 767px)');
 
-  const [planets, setPlanets] = useState<Planet[] | []>([]);
-  const [currentPlanet, setCurrentPlanet] = useState<Planet>()
+  const [planets, setPlanets] = useState([]);
+  const [currentPlanet, setCurrentPlanet] = useState(null)
   const [loading, setLoading] = useState(true);
 
   // I only want to pass planet names to the nav components, not the entire array of planet objects
-  const planetNames = planets.map((planet: any) => planet.name);
+  const planetNames = planets.map((planet) => planet.name);
 
 
   useEffect(() => {
@@ -37,7 +36,7 @@ function App() {
       .catch(error => console.log(error))
 
     const planet = planets.find(
-      (planet: any) => planet.name.toLowerCase() === location.pathname.substring(1)
+      (planet) => planet.name.toLowerCase() === location.pathname.substring(1)
     );
     setCurrentPlanet(planet);
   }, [location])
