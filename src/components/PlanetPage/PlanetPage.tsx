@@ -30,14 +30,17 @@ function PlanetPage({data} : Props) {
         <button className="tab-button" onClick={() => setSelectedTab('structure')} role="tab"><span className="tab-number">02</span> Structure</button>
         <button className="tab-button" onClick={() => setSelectedTab('geology')} role="tab"><span className="tab-number">03</span> Surface</button>
       </div>
+
       <figure className={`planet-image planet-image--${planetName}`}>
         <img src={`./${selectedFact.image}`} alt={`Illustration of ${data.name}: ${selectedTab}`} />
       </figure>
+
       <div className="planet-facts">
-        <h2 className="planet-name text--display">{data.name}</h2>
+        <h1 className="planet-name text--display">{data.name}</h1>
         <p>{selectedFact.content}</p>
         <p className="planet-fact-source">Source: <a href={selectedFact.source}>Wikipedia</a><SourceIcon /></p>
       </div>
+
       <dl className="planet-statistics">
         <div className="planet-statistic">
           <dt>Rotation Time</dt>

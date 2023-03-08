@@ -75,14 +75,19 @@ p + p {
   margin-block-start: var(--space-md);
 }
 
-.App-header {
+.header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: space-between;
   padding: 30px;
 }
 
-.App-logo {
+.logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.logo {
   width: 108px;
   height: 26px;
 }
