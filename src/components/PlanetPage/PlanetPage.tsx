@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import { Planet } from '../../types/planet.type'
 import './PlanetPage.css';
 import { ReactComponent as SourceIcon } from '../../assets/images/icon-source.svg';
@@ -13,9 +15,13 @@ type Tabs =
   'geology';
 
 function PlanetPage({data} : Props) {
+  const [loading, setLoading] = useState(true);
+
   const [selectedTab, setSelectedTab] = useState<Tabs>('overview');   
+  const { id } = useParams();
   const selectedFact = data[selectedTab];
   const planetName = data.name.toLowerCase();
+
   
   return (
     <div className="planet">

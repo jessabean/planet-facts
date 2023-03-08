@@ -18,6 +18,8 @@
   - ✅ reponsive grid
   - ✅ functioning tabs for overview, structure, geology
   - set active tab state on click
+- Theme
+  - set color variable for each planet dynamically (for nav colors)
 
 ## Architecture notes
 

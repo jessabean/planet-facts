@@ -3,7 +3,7 @@ import styles from './HamburgerNav.module.css'
 import { ReactComponent as MenuIcon } from '../../assets/images/icon-hamburger.svg';
 
 interface Props {
-  activeTab: string,
+  activeTab?: string,
   planets: Array<string>
 }
 
