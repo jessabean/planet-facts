@@ -146,10 +146,57 @@ Content area
   text-align: center;
 }
 
-.tab-list > button:hover,
-.tab-list > button:active {
-  border-color: var(--color-blue);
+.tab-button:hover,
+.tab-button:active {
   cursor: pointer;
+}
+
+.planet--mercury .tab-button:hover,
+.planet--mercury .tab-button:active
+.planet--mercury .tab-button--active {
+  border-color: var(--color-mercury);
+}
+
+.planet--venus .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--venus .tab-button--active {
+  border-color: var(--color-venus);
+}
+
+.planet--earth .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--earth .tab-button--active {
+  border-color: var(--color-earth);
+}
+
+.planet--mars .tab-button:hover,
+.planet--mars .tab-button:active,
+.planet--mars .tab-button--active {
+  border-color: var(--color-mars);
+}
+
+.planet--jupiter .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--jupiter .tab-button--active {
+  border-color: var(--color-jupiter);
+}
+
+.planet--saturn .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--saturn .tab-button--active {
+  border-color: var(--color-saturn);
+}
+
+.planet--uranus .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--uranus .tab-button--active {
+  border-color: var(--color-uranus);
+}
+
+.planet--neptune .tab-button:hover,
+.planet--mercury .tab-button:active,
+.planet--neptune .tab-button--active {
+  border-color: var(--color-neptune);
 }
 
 .tab-number {

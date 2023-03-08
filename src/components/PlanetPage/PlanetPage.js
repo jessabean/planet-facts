@@ -1,24 +1,33 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import './PlanetPage.css';
 import { ReactComponent as SourceIcon } from '../../assets/images/icon-source.svg';
 
 
 function PlanetPage({data}) {
-  const [loading, setLoading] = useState(true);
+  const tabs = ['overview', 'structure', 'geology'];
 
   const [selectedTab, setSelectedTab] = useState('overview');   
-  const { id } = useParams();
   const selectedFact = data[selectedTab];
   const planetName = data.name.toLowerCase();
 
   
   return (
-    <div className="planet">
+    <div className={`planet planet--${data.name.toLowerCase()}`}>
       <div className="tab-list" role="tablist">
-        <button className="tab-button" onClick={() => setSelectedTab('overview')} role="tab"><span className="tab-number">01</span> Overview</button>
-        <button className="tab-button" onClick={() => setSelectedTab('structure')} role="tab"><span className="tab-number">02</span> Structure</button>
-        <button className="tab-button" onClick={() => setSelectedTab('geology')} role="tab"><span className="tab-number">03</span> Surface</button>
+        {
+          tabs.map((tab, index) => {
+            const tabNum = index + 1;
+            const buttonClass = tab === selectedTab
+              ? `tab-button tab-button--active`
+              : `tab-button`;
+            return (
+              <button className={buttonClass} onClick={() => setSelectedTab(tab)} role="tab">
+                <span className="tab-number">{`0+${tabNum}`}</span>
+                {tab}
+              </button>
+            )
+          })
+        }
       </div>
 
       <figure className={`planet-image planet-image--${planetName}`}>
