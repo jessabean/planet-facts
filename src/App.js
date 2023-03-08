@@ -20,7 +20,6 @@ function App() {
   // I only want to pass planet names to the nav components, not the entire array of planet objects
   const planetNames = planets.map((planet) => planet.name);
 
-
   useEffect(() => {
     // Ideally I'd check to see if data is cached before fetching the endpoint
     // e.g., if this data exists in localstorage, use it (from the state variable), 

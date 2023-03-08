@@ -34,6 +34,15 @@
   --space-lg: 1.5em;
   --space-xl: 2em;
   --space-2xl: 2.5em;
+
+  --color-mercury: #419EBB;
+  --color-venus: #EDA249;
+  --color-earth: #545BFE;
+  --color-mars: #FF6A45;
+  --color-jupiter: #ECAD7A;
+  --color-saturn: #FCCB6B;
+  --color-uranus: #65F0D5;
+  --color-neptune: #497EFA;
 }
 
 @font-face {
