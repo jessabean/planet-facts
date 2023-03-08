@@ -1,5 +1,5 @@
 import logo from './assets/images/logo.svg';
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import './App.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { Fragment, useEffect, useState } from 'react';
@@ -8,7 +8,6 @@ import Nav from './components/Nav/Nav';
 import HamburgerNav from './components/HamburgerNav/HamburgerNav';
 import PlanetPage from './components/PlanetPage/PlanetPage';
 import { Planet } from './types/planet.type'
-import { useParams } from "react-router-dom";
 
 const initialPlanet: Planet = {
   "name": "Mercury",
@@ -34,19 +33,13 @@ const initialPlanet: Planet = {
 };
 
 function App() {
-  const { id } = useParams();
+  const location = useLocation();
 
   const [planets, setPlanets] = useState<Planet[] | []>([]);
   const [currentPlanet, setCurrentPlanet] = useState<Planet>()
   const [loading, setLoading] = useState(true);
 
-  function getPlanetNames(): string[] {
-    if (planets.length) {
-      return planets.map((planet: any) => planet.name);
-    } else {
-      return [];
-    }
-  }
+  const planetNames = planets.map((planet: any) => planet.name);
 
   const matchesSmallScreen = useMediaQuery('(max-width: 767px)');
 
@@ -60,8 +53,11 @@ function App() {
         }
       })
       .catch(error => console.log(error))
-      console.log(currentPlanet)
-  }, [])
+
+
+    const planet = planets.find((planet: any) => planet.name.toLowerCase() === location.pathname.substring(1));
+    setCurrentPlanet(planet);
+  }, [location])
 
   return (
     <HelmetProvider>
@@ -77,8 +73,8 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo" />      
                 {
                   matchesSmallScreen
-                  ? <HamburgerNav activeTab={currentPlanet?.name} planets={getPlanetNames()}></HamburgerNav>
-                  : <Nav activeTab={currentPlanet?.name} planets={getPlanetNames()}></Nav>
+                  ? <HamburgerNav activeTab={currentPlanet?.name} planets={planetNames}></HamburgerNav>
+                  : <Nav activeTab={currentPlanet?.name} planets={planetNames}></Nav>
                 }  
               </header>
               <main className='main-content'>
